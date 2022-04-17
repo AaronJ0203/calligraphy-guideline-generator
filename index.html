@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calligraphy Guideline Generator</title>
+  <link rel="stylesheet" type="text/css" href="guide-style.css">
+</head>
+<body>
+
+  <div id="generator">
+
+    <h2>Calligraphy Guideline Generator</h2>
+
+    <form>
+
+      <fieldset>
+      <p>Please select an ascender : x-height : descender ratio:</p>
+      <input type="radio" id="323" name="ratio" value="3.1,2.2,3.3" checked><label for="323">3:2:3</label><br>
+      <input type="radio" id="212" name="ratio" value="2,1,2"><label for="212">2:1:2</label><br>
+      <input type="radio" id="111" name="ratio" value="1,1,1"><label for="111">1:1:1</label><br>
+      <input type="radio" id="ratioOther" name="ratio" value=""><label for ="ratioOther">Custom ratio</label><br>
+        <div id="customRatio">
+          <div class="row">
+            <div class="column"><label for="ascender">Ascender:</label></div>
+            <div class="column"><input type="text" id="ascender" name="ascenderRatio" size="2"></div>
+          </div>
+          <div class="row">
+            <div class="column"><label for="ascender">x-height:</label></div>
+            <div class="column"><input type="text" id="ascender" name="xheightRatio" size="2"></div>
+          </div>
+          <div class="row">
+            <div class="column"><label for="ascender">Descender:</label></div>
+            <div class="column"><input type="text" id="ascender" name="descenderRatio" size="2"></div>
+          </div>
+        </div>
+      </fieldset>
+      <label for="xHeight">x-height (mm):</label><input type="text" id="xHeight" name="xHeight" value="5"><br>
+      <fieldset>
+      <p>Please select a guideline angle:</p>
+      <input type="radio" id="55" name="angle" value="55" checked><label for="55">55&#176;</label><br>
+      <input type="radio" id="90" name="angle" value="90"><label for="90">90&#176;</label>
+      </fieldset>
+      <label for="katlin">Katlin style bounce?</label><input type="checkbox" id="katlin" name="katlin" value="katlin"><br>
+
+      <input type="button" class="button" onclick="genLines(ratio.value,xHeight.value,angle.value,katlin.checked);" value="GENERATE GUIDELINES">
+
+    </form>
+
+  </div>
+
+  <div id="page">
+  </div>
+
+  <script src="guide-js.js"></script> 
+
+</body>
+</html>
